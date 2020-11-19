@@ -20,27 +20,44 @@
     ·了解异常的使用方法，并在程序中根据输入情况做异常处理
 
 ## 实验过程：
-    ·首先在Students.java中创建Personner父类，并赋予其子类可能用到的元素，然后将学生还有老师的类继承（extends）父类并添加特定元素和属性，从而完成Students.java。
-    ·然后在LIst.java中使用set方法写入相应信息，在使用get方法调用相应的信息，然后调用并输出输出相应结果，从而达到测试主类，模拟选课，模拟退课，展示信息的操作。
+    ·首先在Student.java与Teacher.java中使用set与get创建接口，从而完成Students.java与Teacher.java。
+    ·然后在PHD.java中构建博士类赋予其相应的元素与相应的运算。
+    ·再在Tist.java中进行scanner的语法来实现键盘的键入
     ·其他具体详情见核心代码环节
 ## 核心代码：
-    ·1，定义父类，继承代码展示：
+    ·1，建立接口，使用set与get的代码展示：
     ···
-    class personner
-    public class Students extends Personner{}
-    class Teacher extends Personne{}
+    public interface student {
+		 public abstract void setFee(double fee);
+		 public abstract void getFee(double fee);
+         }
     ···
-    ·2，这里我们需要用到java.text.SimpleDateFormat类的format方法,其中可以指定年月日时分秒的模式字符串格式。
+    ·2，调用接口的代码展示。
     ···
-    import java.text.SimpleDateFormat;
-    import java.util.Date;
-    SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+    public abstract class graduate implements student,teacher
     ···
-    ·3，使用set写入，get调用输出。
+    ·3，使用scanner来实现键盘的键入。
+    ···
+    System.out.println("请输入姓名：");
+			Scanner canner = new Scanner(System.in);
+    ···
+    ·4，使用try方法和if.else来实现税率的运算
+    ···
+    try{
+		if((salary-fee)<3000) {
+			System.out.println("应纳税款"+(salary-fee)*0.03);
+			System.out.println("实发工资"+((salary-fee)-((salary-fee)*0.03)));
+		}else if((salary-fee)>3000 && (salary-fee)<=12000){
+			
+			System.out.println("应纳税款"+(salary-fee)*0.1);
+			System.out.println("实发工资"+((salary-fee)-((salary-fee)*0.1)));
+		}
+     ···
 ## 输出结果：
-![](https://github.com/qiuyufei/shiyan3/blob/main/1.png)
+    输出结果为自行输入来进行相应运算从而给出相应的结果和税费
 
 ## 实验感想：
-    ·首先明确了java代码的大框架，明确了子类父类的关系可以使用继承，一个子类只能有一个父类。
-    ·其次目前可以比较熟练的使用set和get方法，来达成自己的目的。
+    ·首先学会了新建接口，和调用接口。
+    ·其次目前可以很熟练的使用set和get方法，来达成自己的目的。
+    ·学会了try方法，并可以熟练使用if.else.else if.来实现运算的多种情况
     ·然后此次代码的完成在没有思路时完成的很困难，去同学哪里取了不少经，以后会匀出时间去钻研研究。
