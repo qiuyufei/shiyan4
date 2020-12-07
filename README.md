@@ -54,7 +54,8 @@
 		}
      ···
 ## 输出结果：
-    输出结果为自行输入来进行相应运算从而给出相应的结果和税费
+
+![](https://github.com/qiuyufei/shiyan4/blob/main/%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C/qyf.PNG)
 
 ## 实验感想：
     ·首先学会了新建接口，和调用接口。
